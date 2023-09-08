@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dailycodework.sbemailverificationdemo.registration.RegistrationRequest;
+import com.dailycodework.sbemailverificationdemo.reset.password.UpdatePasswordRequest;
 
 import lombok.RequiredArgsConstructor;
 
@@ -86,6 +87,12 @@ public class UserController {
 		return new ResponseEntity<List<User>>(userService.findUsuarioByEscuela(escuela_id),HttpStatus.OK);
 	}
 	
+	@PutMapping("/{username}/update-password")
+    @CrossOrigin(origins = "http://localhost:5173")
+    public ResponseEntity<String> updateUserPassword(@PathVariable String username, @RequestBody UpdatePasswordRequest request) {
+        User updatedUser = userService.updateUserPasswordByUsername(username, request.getNewPassword());
+        return ResponseEntity.ok("Contraseña actualizada con éxito para el usuario: " + updatedUser.getUsername());
+    }	
 	
 	
 	//J-verificar docentes

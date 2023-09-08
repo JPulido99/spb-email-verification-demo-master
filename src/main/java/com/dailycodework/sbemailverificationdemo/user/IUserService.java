@@ -32,6 +32,7 @@ public interface IUserService {
 	//Usuario findUsuarioByCodigo(String codigo);
     User findUsuarioByFirstName(String firstName);
 	List<User> findUsuarioByEscuela(Long id);
+	User updateUserPasswordByUsername(String username, String newPassword);
 	
 	//J-verificar docentes
 	List<User> getUsersByRoleId(Long roleId);
@@ -45,6 +46,8 @@ public interface IUserService {
 	void invalidateLoginToken(String token);
 	//PARA RESTABLECER CONTRASEÑA	
 //	void initiatePasswordReset(String username);
+	boolean isLoginTokenNotExpired(String token);
+	boolean validateLoginToken(String token);
 	
 	
     	

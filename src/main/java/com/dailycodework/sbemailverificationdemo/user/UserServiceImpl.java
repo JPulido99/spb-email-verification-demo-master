@@ -213,6 +213,36 @@ public class UserServiceImpl implements IUserService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public User updateUserPasswordByUsername(String username, String newPassword) {
+	    User userToUpdate = userRepository.findByUsername(username)
+	            .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado"));
+
+	    userToUpdate.setPassword(passwordEncoder.encode(newPassword));
+
+	    return userRepository.save(userToUpdate);
+	}
+	@Override
+    public boolean validateLoginToken(String token) {
+        LoginToken loginToken = loginTokenRepository.findByToken(token);
+        if (loginToken != null) {
+            Date expirationTime = loginToken.getExpirationTime();
+            Date currentTime = new Date();
+            return currentTime.before(expirationTime); // El token es válido si la hora actual es antes de la hora de expiración
+        }
+        return false; // El token no se encontró o está expirado
+    }
+	@Override
+    public boolean isLoginTokenNotExpired(String token) {
+        LoginToken loginToken = loginTokenRepository.findByToken(token);
+        if (loginToken != null) {
+            Date expirationTime = loginToken.getExpirationTime();
+            return expirationTime != null && expirationTime.after(new Date());
+        }
+        return false;
+    }
+
 
 //J-verificar docentes
 	
