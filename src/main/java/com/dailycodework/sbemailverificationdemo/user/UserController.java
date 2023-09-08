@@ -88,7 +88,7 @@ public class UserController {
 	}
 	
 	@PutMapping("/{username}/update-password")
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
     public ResponseEntity<String> updateUserPassword(@PathVariable String username, @RequestBody UpdatePasswordRequest request) {
         User updatedUser = userService.updateUserPasswordByUsername(username, request.getNewPassword());
         return ResponseEntity.ok("Contraseña actualizada con éxito para el usuario: " + updatedUser.getUsername());
