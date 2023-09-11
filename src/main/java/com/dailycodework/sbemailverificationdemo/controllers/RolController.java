@@ -30,25 +30,25 @@ public class RolController {
 
 	
 	@GetMapping("/roles")
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public List<Rol> listarRol() {
         return rolService.list();
     }
 	
     @PostMapping
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public Rol crearRol(@RequestBody Rol rol) {
         return rolService.register(rol);
     }
     
     @DeleteMapping("/{id}")
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ResponseEntity<Void> eliminarRol(@PathVariable Long id) {
         rolService.deleteRol(id);
         return ResponseEntity.noContent().build();
     }
     @PutMapping("/{id}")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public Rol actualizarRol(@PathVariable("id") Long id, @RequestBody Rol rol) {
         return rolService.update(id, rol);
     }

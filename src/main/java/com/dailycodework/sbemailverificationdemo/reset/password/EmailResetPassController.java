@@ -25,7 +25,7 @@ public class EmailResetPassController {
         String destinatario = request.getDestinatario();
 
         // Construir el enlace a la interfaz de ReactJS
-        String enlaceInterfaz = "https://victorious-rock-009afba10.3.azurestaticapps.net/resetPassword";  // Cambia esto al enlace correcto
+        String enlaceInterfaz = "https://zealous-sea-0c3294610.3.azurestaticapps.net/resetPassword";  // Cambia esto al enlace correcto
         String mensaje = "Si solicitaste el cambio de tu contraseña en el sistema de la Facultad de Ingenieria de Minas,Geologia y Civil, haz click <a href='" + enlaceInterfaz + "'>aquí</a> para cambiar tu contraseña.";
 
         // Agregar un atributo adicional para permitir HTML en el correo

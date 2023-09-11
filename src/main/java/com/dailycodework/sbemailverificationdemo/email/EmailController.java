@@ -13,7 +13,7 @@ public class EmailController {
     private EmailService emailService;
 
     @PostMapping("/sendEmail")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ResponseEntity<String> sendEmail(@RequestBody EmailRequest request) {
         // Validar la solicitud si es necesario
 

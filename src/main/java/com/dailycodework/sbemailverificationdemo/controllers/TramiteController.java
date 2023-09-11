@@ -28,31 +28,31 @@ public class TramiteController {
 	private ITramiteService tramiteService;
 	
 	@GetMapping
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public List<Tramite> listarTramites() {
         return tramiteService.listTramite();
     }
 
     @PostMapping
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public Tramite crearTramite(@RequestBody Tramite tramite) {
         return tramiteService.registerTramite(tramite);
     }
 
     @GetMapping("/{id}")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public Tramite obtenerTramite(@PathVariable("id") Long id) {
         return tramiteService.tramiteById(id);
     }
     
     @PutMapping("/{id}")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public Tramite actualizarTramite(@PathVariable("id") Long id, @RequestBody Tramite tramite) {
         return tramiteService.updateTramite(id, tramite);
     }
     
     @DeleteMapping("/{id}")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public boolean eliminarTramite(@PathVariable("id") Long id) {
         return tramiteService.deleteTramite(id);
     }

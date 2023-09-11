@@ -31,28 +31,28 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("/api/expediente")
-@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
 public class ExpedienteController {
 
 	@Autowired
 	private IExpedienteService expedienteService;
 
 	@GetMapping(value = "/listar", produces = MediaType.APPLICATION_JSON_VALUE)
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
 	public List<Expediente> listarExpediente() {
 		return expedienteService.list();
 	}
 
 	
 	@GetMapping("/{nroExpediente}")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public Expediente verificarExpediente(@PathVariable("nroExpediente") String nroExpediente) {
         
 		return expedienteService.verificarExpediente(nroExpediente);
     }
 	
 //	@GetMapping("/{id}")
-//    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+//    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
 //    public Escuela obtenerEscuelaPorID(@PathVariable("id") Long id) {
 //        return escuelaService.escuelaById(id);
 //    }
@@ -161,7 +161,7 @@ public class ExpedienteController {
 
 	@PostMapping(value = "/registrar", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE,
 			MediaType.APPLICATION_JSON_VALUE })
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
 	public Expediente subirExpediente(@RequestParam("pdf") MultipartFile pdf,
 			@RequestParam("expediente") String expedienteJson) {
 		try {
@@ -194,7 +194,7 @@ public class ExpedienteController {
 	}
 
 	@GetMapping("/{id}/version/{versionNumber}")
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
 	public byte[] obtenerVersionDocumento(@PathVariable("id") Long id,
 			@PathVariable("versionNumber") int versionNumber) {
 		return expedienteService.findVersionByIdAndNumber(id, versionNumber);

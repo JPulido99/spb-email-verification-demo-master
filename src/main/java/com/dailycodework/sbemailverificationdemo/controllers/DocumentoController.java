@@ -21,7 +21,7 @@ import com.dailycodework.sbemailverificationdemo.services.IDocumentoService;
 
 @RestController
 @RequestMapping("/api/documento")
-@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
 public class DocumentoController {
 
 	@Autowired
@@ -30,7 +30,7 @@ public class DocumentoController {
 	
     // Endpoint para actualizar Version de expediente (Dictamen+MM+Expediente)
     @PostMapping("/{nroExpediente}/actualizarDictamen")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ResponseEntity<String> actualizarDatosDictamen(@PathVariable String nroExpediente,@RequestBody Documento documento) throws NotFoundException {
     	try {
             documentoService.actualizarDatosDictamen(nroExpediente, documento);
@@ -42,7 +42,7 @@ public class DocumentoController {
     
     // Endpoint para actualizar Version de expediente (Constancia+Dictamen+MM+Expediente)
     @PostMapping("/{nroExpediente}/actualizarConstancia")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ResponseEntity<String> actualizarDatosConstancia(@PathVariable String nroExpediente,@RequestBody Documento documento) throws NotFoundException {
     	try {
             documentoService.actualizarDatosConstancia(nroExpediente, documento);
@@ -57,7 +57,7 @@ public class DocumentoController {
 	
     // Endpoint para actualizar Version de expediente (Dictamen+MM+Expediente)
     @PostMapping("/{nroExpediente}/actualizarSustentacion")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ResponseEntity<String> actualizarSustentacion(@PathVariable String nroExpediente,@RequestParam Long secredocenteId, @RequestBody Documento documento) throws NotFoundException {
     	try {
             documentoService.actualizarSustentacion(nroExpediente, documento, secredocenteId);
@@ -69,7 +69,7 @@ public class DocumentoController {
 	
     // Endpoint para actualizar Version de expediente (Dictamen+MM+Expediente)
     @PostMapping("/{nroExpediente}/actualizarSesionCF")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ResponseEntity<String> actualizarSesionCF(@PathVariable String nroExpediente,@RequestParam Date fechaSesionCF) throws NotFoundException {
     	try {
             documentoService.actualizarSesionCF(nroExpediente, fechaSesionCF);

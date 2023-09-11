@@ -45,13 +45,13 @@ public class EscuelaController {
 	
 	
 	@GetMapping
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public List<Escuela> listarEscuela() {
         return escuelaService.list();
     }
     
     @PostMapping
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ResponseEntity<Escuela> register(@RequestBody Escuela escuela) {
         Escuela nuevaEscuela = escuelaService.register(escuela);
         return new ResponseEntity<>(nuevaEscuela, HttpStatus.CREATED);
@@ -59,32 +59,32 @@ public class EscuelaController {
 
     
     @PutMapping("/{id}")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public Escuela actualizarEscuela(@PathVariable("id") Long id, @RequestBody Escuela escuela) {
         return escuelaService.update(id, escuela);
     }
     
     
 	@GetMapping(value="/list", produces=MediaType.APPLICATION_JSON_VALUE)
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
 	public ResponseEntity<List<Escuela>> list(){
 		return new ResponseEntity<List<Escuela>>(escuelaService.list(),HttpStatus.OK);
 	}
 	
 	@GetMapping("/{id}")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public Escuela obtenerEscuelaPorID(@PathVariable("id") Long id) {
         return escuelaService.escuelaById(id);
     }
 	
 	@DeleteMapping("/{id}")
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ResponseEntity<Void> eliminarEscuela(@PathVariable Long id) {
 		escuelaService.delete(id);
         return ResponseEntity.noContent().build();
     }
 	@GetMapping("/{id}/planes")
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public List<PlanEstudios> listarPlanesPorIdEscuela(@PathVariable("id") Long id) {
         return planEstudiosService.listByEscuela(id);
     }

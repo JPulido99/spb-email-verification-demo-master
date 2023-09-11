@@ -33,13 +33,13 @@ public class PlanEstudiosController {
 	
 	
 	@GetMapping(value="/list", produces=MediaType.APPLICATION_JSON_VALUE)
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
 	 public List<PlanEstudios> listarPlanes() {
         return planEstudiosService.list();
     }
 
     @PostMapping(value = "/registrar", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE, MediaType.APPLICATION_JSON_VALUE})
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public PlanEstudios crearPlan(@RequestBody PlanEstudios planEstudios) {
         return planEstudiosService.register(planEstudios);
         
@@ -47,18 +47,18 @@ public class PlanEstudiosController {
 
     
     @PutMapping("/{id}")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public PlanEstudios actualizarPlan (@PathVariable("id") Long id, @RequestBody PlanEstudios planEstudios) {
         return planEstudiosService.update(id, planEstudios);
     }
     @DeleteMapping("/{id}")
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ResponseEntity<Void> eliminarPlan(@PathVariable Long id) {
 		planEstudiosService.delete(id);
         return ResponseEntity.noContent().build();
     }
     @GetMapping("/{id}")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ResponseEntity<PlanEstudios> getPlanById(@PathVariable Long id) {
         PlanEstudios plan = planEstudiosService.findPlanById(id);
         if (plan != null) {

@@ -28,18 +28,18 @@ public class TipoDocumentoController {
     private ITipoDocumentoService tipoDocumentoService;
 
     @GetMapping
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public List<TipoDocumento> listarTipoDocumentos() {
         return tipoDocumentoService.list();
     }
 
     @PostMapping
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public TipoDocumento crearTipoDocumento(@RequestBody TipoDocumento tipoDocumento) {
         return tipoDocumentoService.register(tipoDocumento);
     }
     @DeleteMapping("/{id}")
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ResponseEntity<Void> deleteTipoDocumento(@PathVariable Long id) {
         tipoDocumentoService.deleteTipoDocumento(id);
         return ResponseEntity.noContent().build();
@@ -56,7 +56,7 @@ public class TipoDocumentoController {
 	 */
     
     @PutMapping("/{id}")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public TipoDocumento actualizarTipoDocumento(@PathVariable("id") Long id, @RequestBody TipoDocumento tipoDocumento) {
         return tipoDocumentoService.update(id, tipoDocumento);
     }

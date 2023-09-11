@@ -40,7 +40,7 @@ import org.springframework.web.bind.annotation.*;
 	        VerificationToken theToken = tokenRepository.findByToken(token);
 
 	        if (theToken == null) {
-	            response.sendRedirect("https://victorious-rock-009afba10.3.azurestaticapps.net/tokenExpirado");
+	            response.sendRedirect("https://zealous-sea-0c3294610.3.azurestaticapps.net/tokenExpirado");
 	            return;
 	        }
 
@@ -52,12 +52,12 @@ import org.springframework.web.bind.annotation.*;
 	                userService.deleteUnverifiedUser(user.getUsername());
 	            }
 	            tokenRepository.delete(theToken); // Eliminar el token expirado
-	            response.sendRedirect("https://victorious-rock-009afba10.3.azurestaticapps.net/tokenExpirado");
+	            response.sendRedirect("https://zealous-sea-0c3294610.3.azurestaticapps.net/tokenExpirado");
 	            return;
 	        }
 
 	        if (user.isEnabled()) {
-	            response.sendRedirect("https://victorious-rock-009afba10.3.azurestaticapps.net/verificadoExitoso");
+	            response.sendRedirect("https://zealous-sea-0c3294610.3.azurestaticapps.net/verificadoExitoso");
 	            return;
 	        }
 
@@ -65,9 +65,9 @@ import org.springframework.web.bind.annotation.*;
 	        String verificationResult = userService.validateToken(token);
 
 	        if (verificationResult.equalsIgnoreCase("valid")) {
-	            response.sendRedirect("https://victorious-rock-009afba10.3.azurestaticapps.net/verificadoExitoso");
+	            response.sendRedirect("https://zealous-sea-0c3294610.3.azurestaticapps.net/verificadoExitoso");
 	        } else {
-	            response.sendRedirect("https://victorious-rock-009afba10.3.azurestaticapps.net/token-invalido");
+	            response.sendRedirect("https://zealous-sea-0c3294610.3.azurestaticapps.net/token-invalido");
 	        }
 	    }
 	    						

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/resetPassword")
-@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
 public class PasswordResetController {
 	
 

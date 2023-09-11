@@ -36,7 +36,7 @@ public class UserController {
     private  IUserService userService;
 
     @GetMapping(value="/list", produces=MediaType.APPLICATION_JSON_VALUE)
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
 	public ResponseEntity<List<User>> list(){
 		return new ResponseEntity<List<User>>(userService.list(),HttpStatus.OK);
 	}
@@ -72,7 +72,7 @@ public class UserController {
 	
 	
 		@GetMapping(value="/findUsuarioById/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
-		@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+		@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
 		public ResponseEntity<User> findUsuarioById(@PathVariable Long id){
 			return new ResponseEntity<User>(userService.obtenerUsuarioPorId(id),HttpStatus.OK);
 		}
@@ -88,7 +88,7 @@ public class UserController {
 	}
 	
 	@PutMapping("/{username}/update-password")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ResponseEntity<String> updateUserPassword(@PathVariable String username, @RequestBody UpdatePasswordRequest request) {
         User updatedUser = userService.updateUserPasswordByUsername(username, request.getNewPassword());
         return ResponseEntity.ok("Contraseña actualizada con éxito para el usuario: " + updatedUser.getUsername());
@@ -104,7 +104,7 @@ public class UserController {
     }
     
     @GetMapping("/buscarDocentes")
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public List<User> buscarDocentesPorNombre(@RequestParam String firstName) {
         return userService.buscarDocentesPorNombre(firstName,3L);
     }

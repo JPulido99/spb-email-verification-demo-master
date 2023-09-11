@@ -29,19 +29,19 @@ public class ModalidadIngresoController {
 	
 	
 	@GetMapping("/list")
-	@CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+	@CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public List<ModalidadIngreso> listarModalidad() {
         return modalidadIngresoService.list();
     }
 	
 	@GetMapping("/{id}")
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ModalidadIngreso obtenerModalidadPorID(@PathVariable("id") Long id) {
         return modalidadIngresoService.modalidadById(id);
     }
 	
 	@PostMapping
-    @CrossOrigin(origins = "https://victorious-rock-009afba10.3.azurestaticapps.net")
+    @CrossOrigin(origins = "https://zealous-sea-0c3294610.3.azurestaticapps.net")
     public ResponseEntity<ModalidadIngreso> register(@RequestBody ModalidadIngreso modalidadIngreso) {
         ModalidadIngreso nuevaModalidadIngreso = modalidadIngresoService.register(modalidadIngreso);
         return new ResponseEntity<>(nuevaModalidadIngreso, HttpStatus.CREATED);
